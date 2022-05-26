@@ -4,6 +4,7 @@ import { isEmpty } from "./utils/utils";
 
 const App = () => {
   const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
   const [index, setIndex] = useState(1);
 
   const generate = () => {
@@ -19,6 +20,7 @@ const App = () => {
       })
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
+      setIsLoading(false);
     }
     fetchData();
   }, []);
@@ -31,16 +33,48 @@ const App = () => {
           Le <br /> Penseur
         </h1>
       </div>
-      {!isEmpty(data) && (
-        <div className="card">
-          <img className="paperclip" src="./images/paperclip.png" alt="paperclip" />
-          <div className={data[index].category === "Géographie" ? "geography" : "category" && data[index].category === "Animaux" ? "animal" : "category" && data[index].category === "Histoire" ? "history" : "category" && data[index].category === "Art et Culture" ? "art" : "category"  && data[index].category === "Sport" ? "sport" : "category" && data[index].category === "Histoire" ? "history" : "category" && data[index].category === "Art et Culture" ? "art" : "category"  && data[index].category === "Insolite" ? "funny" : "category" && data[index].category === "Nourriture" ? "food" : "category"} >
-            <span>{data[index] && data[index].category}</span>
-          </div>
+      {isLoading ? (
+        <i className="fas fa-spinner fa-spin"></i>
+      ) : (
+        !isEmpty(data) && (
+          <div className="card">
+            <img
+              className="paperclip"
+              src="./images/paperclip.png"
+              alt="paperclip"
+            />
+            <div
+              className={
+                data[index].category === "Géographie"
+                  ? "geography"
+                  : "category" && data[index].category === "Animaux"
+                  ? "animal"
+                  : "category" && data[index].category === "Histoire"
+                  ? "history"
+                  : "category" && data[index].category === "Art et Culture"
+                  ? "art"
+                  : "category" && data[index].category === "Sport"
+                  ? "sport"
+                  : "category" && data[index].category === "Histoire"
+                  ? "history"
+                  : "category" && data[index].category === "Art et Culture"
+                  ? "art"
+                  : "category" && data[index].category === "Insolite"
+                  ? "funny"
+                  : "category" && data[index].category === "Nourriture"
+                  ? "food"
+                  : "category"
+              }
+            >
+              <span>{data[index] && data[index].category}</span>
+            </div>
 
-          <p>{data[index] && data[index].content}</p>
-          <button className="btn-push" onClick={generate}><img src="./images/arrow.svg" alt="arrow" /></button>
-        </div>
+            <p>{data[index] && data[index].content}</p>
+            <button className="btn-push" onClick={generate}>
+              <img src="./images/arrow.svg" alt="arrow" />
+            </button>
+          </div>
+        )
       )}
 
       <div className="footer">
