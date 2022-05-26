@@ -15,7 +15,7 @@ const App = () => {
     function fetchData() {
       axios({
         method: "get",
-        url: "http://localhost:5000/api",
+        url: `${process.env.REACT_APP_API_URL}`,
       })
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
