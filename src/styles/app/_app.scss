@@ -9,15 +9,15 @@
 
 
 .desktop {
-  padding-top: 50px;
+
 }
 
 .header {
   display: flex;
   align-items: center;
-  margin: 20px 10px;
+  margin: 100px 10px 0px;
   img {
-    width: 150px;
+    width: 120px;
   }
   h1 {
     color: $white;
@@ -28,6 +28,7 @@
 .card {
   position: relative;
   background-color: $white;
+  color: $font;
   padding: 20px;
   margin: 50px 10px;
   border-radius: 8px;
@@ -49,7 +50,7 @@
   .category {
     position: absolute;
     top: -15px;
-    left: 90px;
+    left: 80px;
     background-color: #f72585;
     padding: 10px 30px;
     transform: rotate(-5deg);
@@ -60,7 +61,7 @@
   .geography{
     position: absolute;
     top: -15px;
-    left: 90px;
+    left: 80px;
     background-color: #f7a325;
     padding: 10px 30px;
     transform: rotate(-5deg);
@@ -71,7 +72,7 @@
   .animal{
     position: absolute;
     top: -15px;
-    left: 90px;
+    left: 80px;
     background-color: #8338ec;
     color: $white;
     padding: 10px 30px;
@@ -83,8 +84,8 @@
   .funny{
     position: absolute;
     top: -15px;
-    left: 90px;
-    background-color: #8ac926;
+    left: 80px;
+    background-color: #2ec4b6;
     padding: 10px 30px;
     transform: rotate(-5deg);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -94,7 +95,7 @@
   .food{
     position: absolute;
     top: -15px;
-    left: 90px;
+    left: 80px;
     background-color: #b5179e;
     color: $white;
     padding: 10px 30px;
@@ -106,7 +107,7 @@
   .history{
     position: absolute;
     top: -15px;
-    left: 90px;
+    left: 80px;
     background-color: #fb5607;
     padding: 10px 30px;
     transform: rotate(-5deg);
@@ -117,7 +118,7 @@
   .sport{
     position: absolute;
     top: -15px;
-    left: 90px;
+    left: 80px;
     background-color: #3d5a80;
     padding: 10px 30px;
     transform: rotate(-5deg);
@@ -129,7 +130,7 @@
   .art{
     position: absolute;
     top: -15px;
-    left: 90px;
+    left: 80px;
     background-color: #3a86ff;
     padding: 10px 30px;
     transform: rotate(-5deg);
@@ -138,8 +139,8 @@
   }
 
   p {
-    margin: 50px 0;
-    line-height: 1.8rem;
+    margin: 50px 0 10px;
+    line-height: 1.6rem;
   }
 
   .btn-push {
