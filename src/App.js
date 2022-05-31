@@ -1,29 +1,16 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { isEmpty } from "./utils/utils";
+import useMountRequest from "./hooks/useMountRequest";
+import { requestPost } from "./request/requestPost";
 
 const App = () => {
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  const [data, loadingData] = useMountRequest(requestPost);
   const [index, setIndex] = useState(1);
 
   const generate = () => {
     const index = Math.floor(Math.random() * data.length);
     setIndex(index);
   };
-
-  useEffect(() => {
-    function fetchData() {
-      axios({
-        method: "get",
-        url: `${process.env.REACT_APP_API_URL}`,
-      })
-        .then((res) => setData(res.data))
-        .catch((err) => console.log(err));
-      setIsLoading(false);
-    }
-    fetchData();
-  }, []);
 
   return (
     <div className="desktop">
@@ -33,8 +20,10 @@ const App = () => {
           Le <br /> Penseur
         </h1>
       </div>
-      {isLoading ? (
-        <i className="fas fa-spinner fa-spin"></i>
+      {loadingData ? (
+        <div className="spinner">
+          <i className="fas fa-spinner fa-spin"></i>
+        </div>
       ) : (
         !isEmpty(data) && (
           <div className="card">
@@ -70,12 +59,11 @@ const App = () => {
             </div>
 
             <p>{data[index] && data[index].content}</p>
-            <button className="btn-push" onClick={generate}>
-              <img src="./images/arrow.svg" alt="arrow" />
-            </button>
           </div>
         )
       )}
+
+      <button onClick={generate} className="btn-quiz">. . .</button>
 
       <div className="footer">
         <p>2022 - alban</p>
