@@ -9,6 +9,7 @@
 /coverage
 
 .env
+/src/data/quiz.json
 
 # misc
 .DS_Store

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { isEmpty } from "./utils/utils";
 import useMountRequest from "./hooks/useMountRequest";
 import { requestPost } from "./request/requestPost";
+import { NavLink } from "react-router-dom";
 
 const App = () => {
   const [data, loadingData] = useMountRequest(requestPost);
@@ -59,11 +60,16 @@ const App = () => {
             </div>
 
             <p>{data[index] && data[index].content}</p>
+
+            <button onClick={generate} className="btn-quiz">
+              . . .
+            </button>
           </div>
         )
       )}
-
-      <button onClick={generate} className="btn-quiz">. . .</button>
+      <NavLink to="/quiz">
+        <button className="btn-quiz game">Testez vos connaissances</button>
+      </NavLink>
 
       <div className="footer">
         <p>2022 - alban</p>
