@@ -242,7 +242,7 @@ a {
   animation: grow 0.3s cubic-bezier(0.175, 0.885, 0.43, 1.65), 0s 1;
 }
 
-.score{
+.score {
   text-align: center;
 }
 
@@ -250,4 +250,10 @@ a {
   font-size: 0.8rem;
   font-style: italic;
   color: grey;
+}
+
+.back {
+  display: block;
+  margin: 0 auto 100px;
+  width: 180px;
 }

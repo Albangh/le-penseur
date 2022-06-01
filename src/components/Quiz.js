@@ -183,6 +183,10 @@ const Quiz = () => {
           )}
         </div>
       </div>
+      <NavLink to="/">
+        <button className="btn-quiz back">Revenir à l'accueil</button>
+      </NavLink>
+
       <div className="footer">
         <p>2022 - alban</p>
       </div>
