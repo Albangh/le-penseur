@@ -168,17 +168,11 @@ const Quiz = () => {
             </>
           ) : (
             <>
-              {showScore === true ? (
-                <NavLink to="/">
-                  <button onClick={nextQuestionQuiz} className="btn-quiz next">
-                    Accueil
-                  </button>
-                </NavLink>
-              ) : (
+              {showScore === false ? (
                 <button onClick={nextQuestionQuiz} className="btn-quiz next">
                   Suivant
                 </button>
-              )}
+              ) : null}
             </>
           )}
         </div>
